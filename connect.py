@@ -47,8 +47,7 @@ def rename_file(google_service, id_file, new_name):
     Parameter new_name is a string
     """
 
-    copy_name = "{} | {}".format(old_name, new_name)
-    body = {"name": copy_name}
+    body = {"name": new_name}
     google_service.files().update(
         fileId=id_file,
         body=body).execute()
