@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from __future__ import print_function
-import connect
+import renaming
 import pickle
 import os
 from googleapiclient.discovery import build
