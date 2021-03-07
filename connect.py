@@ -27,7 +27,19 @@ def get_photos_ids(google_service, folder):
 
 
 
-def rename_file(google_service, id_file, old_name, new_name):
+
+def qr_code_value(img):
+    """
+    Return a string. Value is QR-code content
+    Parameter img : path to image
+    """
+    image = cv2.imread(str(img))
+    qr_code_detector = cv2.QRCodeDetector()
+    decoded_text, points, matrix = qr_code_detector.detectAndDecode(image)
+    return decoded_text
+
+
+def rename_file(google_service, id_file, new_name):
     """Rename files
     Parameter google_service is a googleapiclient.discovery.Resource class
     Parameter id_file is a string
