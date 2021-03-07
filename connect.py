@@ -1,6 +1,7 @@
 import cv2
 import io
 import shutil
+import sys
 from googleapiclient.http import MediaIoBaseDownload
 
 
@@ -16,6 +17,9 @@ def get_photos_ids(google_service, folder):
         pageSize=10,
         fields="nextPageToken, files(id, name)").execute()
     items = results.get('files', [])
+
+    if len(items) > 1:
+        sys.exit("Found other folder name with same name. Exit")
 
     # Fetch id of all file from parameter folder
     id_photos_test = items[0]['id']
