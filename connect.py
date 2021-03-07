@@ -1,5 +1,7 @@
 import cv2
 import io
+import shutil
+from googleapiclient.http import MediaIoBaseDownload
 
 
 def get_photos_ids(google_service, folder):
@@ -25,7 +27,25 @@ def get_photos_ids(google_service, folder):
     return items_photos
 
 
+def download_photo(google_service, file_name, id_file):
+    """
+    Download an image
+    google_service : googleapiclient.discovery.Resource class
+    file_name : file name - string
+    id_file : file id - string
+    """
 
+    request = google_service.files().get_media(fileId=id_file)
+    fh = io.BytesIO()
+    downloader = MediaIoBaseDownload(fh, request)
+    done = False
+    while done is False:
+        status, done = downloader.next_chunk()
+        print("Download %d%%." % (int(status.progress() * 100)))
+
+    fh.seek(0)
+    with open(file_name, 'wb') as picture:
+        shutil.copyfileobj(fh, picture)
 
 
 def qr_code_value(img):
