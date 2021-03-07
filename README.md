@@ -2,6 +2,7 @@
 
 Script python renommant les photos des objets inventoriés et ajoute son URL dans le champs ad-hoc du tableur contenant l'inventaire.
 Lors de la première connexion, une URL s'affichera. Cliquer dessus pour ensuite octroyer les droits à l'application
+Nécessite l'accès à l'API de Google. Renommer le fichier *credentials.json*
 
 ## To-Do
 
