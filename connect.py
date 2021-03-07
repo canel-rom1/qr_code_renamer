@@ -15,23 +15,16 @@ def get_photos_ids(google_service, folder):
         fields="nextPageToken, files(id, name)").execute()
     items = results.get('files', [])
 
-    # Id of folder Photos_test
+    # Fetch id of all file from parameter folder
     id_photos_test = items[0]['id']
     results_photos = google_service.files().list(
         q="'%s' in parents" % (id_photos_test),
         pageSize=10,
         fields="nextPageToken, files(id, name)").execute()
     items_photos = results_photos.get('files', [])
-
-    # List folder Photos_test with name and id
-    if not items_photos:
-        print('No files found.')
-    else:
-        print('Files:')
-        for item in items_photos:
-            print(u'{0} ({1})'.format(item['name'], item['id']))
-
     return items_photos
+
+
 
 
 def rename_file(google_service, id_file, old_name, new_name):
