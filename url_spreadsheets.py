@@ -40,3 +40,22 @@ def get_inventory_line(service, inventory_id):
         sys.exit("%s inventory with the same name. Exit" % (len(position)))
 
     return position
+
+
+def add_url(service, inventory_position, url):
+    """
+    Write URL on right cell
+    service : googleapiclient.discovery.Resource class
+    inventory_position : line to write URL - str
+    url : URL to image - str
+    """
+
+    value_body = {
+        'majorDimension': 'ROWS',
+        'values': [[url]]
+    }
+    service.spreadsheets().values().update(
+        spreadsheetId=SPREADSHEET_ID,
+        range="Matériel!M%s" % (inventory_position),
+        valueInputOption="USER_ENTERED",
+        body=value_body).execute()
