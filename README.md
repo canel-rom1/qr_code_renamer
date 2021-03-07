@@ -3,14 +3,20 @@
 Script python renommant les photos des objets inventoriés et ajoute son URL dans le champs ad-hoc du tableur contenant l'inventaire.
 Lors de la première connexion, une URL s'affichera. Cliquer dessus pour ensuite octroyer les droits à l'application
 
-Dépendances :
+## To-Do
+
+* Modifier la valeur de la variable statique *SPREADSHEET_ID* dans la classe *url_spreadsheets*
+* Ajouter une fonction déplaçant le fichier renommé
+* Après obtention de la valeur du QR-code, supprimer le fichier téléchargé
+
+## Dépendances :
 
 * OpenCV ;
 * google-api-python-client ;
 * google-auth-httplib2 ;
 * google-auth-oauthlib.
 
-Pour activer la Google Drive API :
+## Pour activer la Google Drive API :
 
 * https://console.developers.google.com/flows/enableapi?apiid=drive
 * S'assurer que __Créer un projet__ soit sélectionné
