@@ -51,7 +51,7 @@ Lors de la première connexion, une URL s'affichera. Cliquer dessus pour ensuite
 * Cliquer sur __OK__
 * Au niveau de l'identifiant nouvellement créé, cliquer sur la flèche vers le bas pour télécharger
 
-Pour activer la Google Sheets API :
+## Pour activer la Google Sheets API :
 
 * Ouvrir son projet dans [la console API](https://github.com/museebolo/qr_code_renamer)
 * Cliquer sur __Bibliothèque__
