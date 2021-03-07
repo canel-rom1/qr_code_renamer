@@ -1,6 +1,7 @@
 # QR_code_renamer
 
 Script python renommant les photos des objets inventoriés et ajoute son URL dans le champs ad-hoc du tableur contenant l'inventaire.
+Lors de la première connexion, une URL s'affichera. Cliquer dessus pour ensuite octroyer les droits à l'application
 
 Dépendances :
 
@@ -9,7 +10,7 @@ Dépendances :
 * google-auth-httplib2 ;
 * google-auth-oauthlib.
 
-Pour activer la Drive API :
+Pour activer la Google Drive API :
 
 * https://console.developers.google.com/flows/enableapi?apiid=drive
 * S'assurer que __Créer un projet__ soit sélectionné
@@ -43,3 +44,16 @@ Pour activer la Drive API :
 * Cliquer sur __Créer__
 * Cliquer sur __OK__
 * Au niveau de l'identifiant nouvellement créé, cliquer sur la flèche vers le bas pour télécharger
+
+Pour activer la Google Sheets API :
+
+* Ouvrir son projet dans [la console API](https://github.com/museebolo/qr_code_renamer)
+* Cliquer sur __Bibliothèque__
+* Choisir __Google Sheets API__
+* Cliquer sur __Activer__
+* Créer un identifiant en cliquant sur __Identifiants__
+* Cliquer sur __Ajouter ou supprimer des niveaux d'accès__
+  * Activer le champ d'application __.../auth/spreadsheets__ ;
+* Cliquer sur __Mettre à jour__
+* Cliquer sur __Enregistrer et Continuer__
+
